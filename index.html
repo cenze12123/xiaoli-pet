@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="小栗的互动小屋。挥手、跳跃、思考，也会跟着你的鼠标看看世界。">
+  <title>小栗 · 陪你一会儿</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233e4d40'/%3E%3Ctext x='32' y='43' font-size='36' text-anchor='middle' fill='%23f5f1e8'%3E栗%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="./assets/xiaoli.png" as="image">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="小栗首页"><span class="brand-mark">栗</span><span>小栗<span class="brand-sub">XIAOLI</span></span></a>
+    <div class="header-note"><span class="status-dot"></span> 一个小小的陪伴</div>
+    <button class="icon-button" id="theme-button" aria-label="切换为静夜模式" title="切换昼夜"><span id="theme-icon" aria-hidden="true">☾</span></button>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span></span> YOUR EVERYDAY COMPANION</div>
+      <h1 id="page-title">今天，也陪你<span class="title-break">一起。</span></h1>
+      <p class="intro-copy">不用说什么，待一会儿就好。<br>移动鼠标，让小栗看看你；<br>也可以拖着他，在小屋里走走。</p>
+      <div class="intro-bottom"><span class="little-star" aria-hidden="true">✳</span><p>日常很小，陪伴刚好。<span>MAKE A LITTLE ROOM FOR JOY.</span></p></div>
+    </section>
+
+    <section class="companion-panel" aria-label="小栗互动小屋">
+      <div class="panel-top"><span class="room-label">小栗的小屋 <span>01</span></span><div class="room-controls"><button id="pause-button" class="text-button" aria-pressed="false">暂停动画</button><span class="divider"></span><button id="reset-button" class="text-button">回到原位 <span aria-hidden="true">↺</span></button></div></div>
+      <div id="stage" class="stage" aria-label="互动区域，可拖动小栗">
+        <div class="room-orbit orbit-one" aria-hidden="true"></div><div class="room-orbit orbit-two" aria-hidden="true"></div>
+        <span class="stage-number" aria-hidden="true">01 / LITTLE MOMENTS</span>
+        <div class="window-light" aria-hidden="true"></div>
+        <div id="pet-shadow" class="pet-shadow" aria-hidden="true"></div>
+        <div id="pet" class="pet" role="button" tabindex="0" aria-label="小栗：单击挥手，双击跳跃，拖动移动，方向键走动，空格跳跃"><div id="sprite" class="sprite" aria-hidden="true"></div></div>
+        <div id="loading" class="loading" role="status"><span class="loading-dot"></span> 小栗马上就来…</div>
+        <div class="stage-caption"><span id="activity-dot" class="status-dot"></span><span id="activity" role="status" aria-live="polite">正在陪你</span></div>
+        <div class="interaction-hint" id="interaction-hint"><span aria-hidden="true">↖</span> 试着移动鼠标，或拖动小栗</div>
+      </div>
+      <div class="panel-bottom"><label class="switch-label"><input id="roam-toggle" type="checkbox"><span class="switch" aria-hidden="true"></span> 自己走走</label><label class="size-control" for="size-range"><span>身影大小</span><input id="size-range" type="range" min="1" max="2.2" step="0.05" value="1.7" aria-label="调整小栗大小"><span class="size-value" id="size-value">1.7×</span></label></div>
+    </section>
+
+    <section class="action-section" aria-labelledby="actions-title"><div class="actions-heading"><h2 id="actions-title">一起做点什么</h2><span>JUST A LITTLE INTERACTION</span></div><div class="action-grid">
+      <button class="action-button" data-action="waving"><span class="action-icon" aria-hidden="true">✋</span><span>打个招呼</span><span class="action-arrow" aria-hidden="true">↗</span></button>
+      <button class="action-button" data-action="jumping"><span class="action-icon jump-icon" aria-hidden="true">↟</span><span>开心跳一下</span><span class="action-arrow" aria-hidden="true">↗</span></button>
+      <button class="action-button" data-action="running"><span class="action-icon" aria-hidden="true">✧</span><span>认真想一想</span><span class="action-arrow" aria-hidden="true">↗</span></button>
+      <button class="action-button" data-action="waiting"><span class="action-icon" aria-hidden="true">◷</span><span>等你回应</span><span class="action-arrow" aria-hidden="true">↗</span></button>
+      <button class="action-button" data-action="review"><span class="action-icon" aria-hidden="true">⌕</span><span>凑近看一看</span><span class="action-arrow" aria-hidden="true">↗</span></button>
+      <button class="action-button" data-action="failed"><span class="action-icon" aria-hidden="true">☁</span><span>有点小失落</span><span class="action-arrow" aria-hidden="true">↗</span></button>
+    </div></section>
+  </main>
+  <footer><span>小栗 · 始终在这里</span><span>点一下挥手 · 双击跳跃 · 方向键走动</span><span class="footer-year">MADE FOR LITTLE MOMENTS</span></footer>
+  <noscript><p class="noscript-note">请启用 JavaScript 来和小栗互动。</p></noscript>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
